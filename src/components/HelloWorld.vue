@@ -87,7 +87,7 @@
           href="https://github.com/vuejs/awesome-vue"
           target="_blank"
           rel="noopener"
-          >awesome-vue</a
+          >{{ this.$store.state.test }}</a
         >
       </li>
     </ul>

@@ -1,17 +1,30 @@
 <template>
   <div id="app">
+    <Navbar />
     <img alt="Vue logo" src="./assets/logo.png" />
+    <h1 v-for="(item, index) in posts" :key="index">{{ item.profile_name }}</h1>
+
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import HelloWorld from "./components/HelloWorld.vue";
+import Navbar from "./components/Navbar.vue";
 
 export default {
   name: "App",
   components: {
     HelloWorld,
+    Navbar,
+  },
+  mounted() {
+    //console.log(this.$store)
+    this.$store.dispatch("loadPosts"); // dispatch loading
+  },
+  computed: {
+    ...mapState(["posts"]),
   },
 };
 </script>
