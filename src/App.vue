@@ -21,10 +21,12 @@ export default {
   },
   mounted() {
     //console.log(this.$store)
-    this.$store.dispatch("loadPosts"); // dispatch loading
+    this.$store.dispatch("loadPosts");
+    this.$store.dispatch("loadProfiles");
   },
   computed: {
     ...mapState(["posts"]),
+    ...mapState(["profiles"]),
   },
 };
 </script>
