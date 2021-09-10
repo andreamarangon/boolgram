@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <Navbar />
-    <h1 v-for="(item, index) in posts" :key="index">{{ item.profile_name }}</h1>
+    <Main :profiles="profiles" />
+    <h1 v-for="(item, index) in profiles" :key="index">
+      {{ item.profile_name }}
+    </h1>
 
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
   </div>
@@ -11,12 +14,14 @@
 import { mapState } from "vuex";
 //import HelloWorld from "./components/HelloWorld.vue";
 import Navbar from "./components/Navbar.vue";
+import Main from "./components/Main.vue";
 
 export default {
   name: "App",
   components: {
     //HelloWorld,
     Navbar,
+    Main,
   },
   mounted() {
     //console.log(this.$store)
@@ -35,7 +40,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  //text-align: center;
   color: #2c3e50;
   margin-top: 60px;
   background-color: #fafafa;
