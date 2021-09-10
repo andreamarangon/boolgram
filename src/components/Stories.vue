@@ -1,8 +1,8 @@
 <template>
-  <div class="col-md-8">
-    <div class="container-fluid">
-      <div class="d-flex">
-        <Story />
+  <div id="stories" class="my-container-fluid">
+    <div class="d-flex">
+      <div v-for="(profile, index) in profiles" :key="index">
+        <Story :profile="profile" />
       </div>
     </div>
   </div>
@@ -23,4 +23,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+#stories {
+  overflow-x: auto;
+}
 </style>

@@ -2,8 +2,12 @@
   <main id="main">
     <div class="container">
       <div class="row">
-        <MainLeft :profiles="profiles" />
-        <MainRight />
+        <div class="col-md-8">
+          <MainLeft :profiles="profiles" />
+        </div>
+        <div class="col-md-4">
+          <MainRight />
+        </div>
       </div>
     </div>
   </main>

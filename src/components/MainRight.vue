@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-4">MAINRIGHT</div>
+  <div>MAINRIGHT</div>
 </template>
 
 <script>

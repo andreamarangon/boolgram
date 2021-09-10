@@ -1,6 +1,6 @@
 <template>
-  <div class="col-md-8">
-    <Stories />
+  <div id="main-left">
+    <Stories :profiles="profiles" />
   </div>
 </template>
 
