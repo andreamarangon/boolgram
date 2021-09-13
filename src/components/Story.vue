@@ -22,22 +22,31 @@ export default {
   width: 80px;
   padding: 0 4px;
   .img-container {
-    display: inline-block;
-    position: relative;
-    width: 56px;
-    height: 56px;
-    overflow: hidden;
     border-radius: 50%;
-    border: 4px solid fuchsia;
+    padding: 2px;
+    position: relative;
+    background: linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
     img {
-      width: 100%;
-      height: 100%;
+      background: #fff;
+      padding: 2px;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
     }
   }
   .my-card-body {
     p {
-      font-size: 12px;
       overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 12px;
       margin: 0;
     }
   }
