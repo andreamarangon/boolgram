@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-          <MainLeft :profiles="profiles" />
+          <MainLeft :profiles="profiles" :posts="posts" />
         </div>
         <div class="col-md-4">
           <MainRight />
@@ -24,12 +24,13 @@ export default {
     MainRight,
   },
 
-  props: ["profiles"],
+  props: ["profiles", "posts"],
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-#main {
+.container {
+  max-width: 975px;
 }
 </style>

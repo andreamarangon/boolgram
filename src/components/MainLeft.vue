@@ -1,19 +1,22 @@
 <template>
   <div id="main-left">
     <Stories :profiles="profiles" />
+    <Posts :posts="posts" />
   </div>
 </template>
 
 <script>
 import Stories from "./Stories.vue";
+import Posts from "./Posts.vue";
 
 export default {
   name: "MainLeft",
   components: {
     Stories,
+    Posts,
   },
 
-  props: ["profiles"],
+  props: ["profiles", "posts"],
 };
 </script>
 

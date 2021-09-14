@@ -110,6 +110,7 @@ export default {
   border-bottom: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   background: #fff;
   .container {
+    max-width: 975px;
     .form-control {
       margin-left: 50px;
       font-size: 14px !important;

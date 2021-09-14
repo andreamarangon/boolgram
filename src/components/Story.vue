@@ -1,10 +1,12 @@
 <template>
-  <div class="my-card d-flex flex-column">
-    <div class="img-container align-self-center">
-      <img :src="profile.profile_picture" class="" alt="profile_picture" />
-    </div>
-    <div class="my-card-body">
-      <p class="text-center">{{ profile.profile_name }}</p>
+  <div id="story">
+    <div class="my-card d-flex flex-column">
+      <div class="img-container align-self-center">
+        <img :src="profile.profile_picture" class="" alt="profile_picture" />
+      </div>
+      <div class="my-card-body">
+        <p class="text-center">{{ profile.profile_name }}</p>
+      </div>
     </div>
   </div>
 </template>

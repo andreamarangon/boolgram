@@ -1,5 +1,5 @@
 <template>
-  <div id="stories" class="my-container-fluid">
+  <div id="stories">
     <div class="d-flex">
       <div
         class="story-container"
@@ -33,6 +33,7 @@ export default {
   border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   border-radius: 3px;
   padding: 16px 0;
+  margin-bottom: 24px;
   .story-container {
     &:first-child {
       padding-left: 10px;
