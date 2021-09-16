@@ -130,7 +130,7 @@
           class="mb-1 all-comment"
           @click="(showMore = false), (isHidden = true)"
         >
-          <span v-if="!isHidden"
+          <span v-if="!isHidden && post.comments.length >= 3"
             >Mostra tutti e i {{ post.comments.length }} commenti</span
           >
         </div>
