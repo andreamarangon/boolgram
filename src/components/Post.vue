@@ -43,6 +43,7 @@
       </div>
       <img :src="post.post_image" class="" alt="post-image" />
       <div class="card-body">
+        <!-- icone -->
         <div class="icon-container d-flex justify-content-between mb-2">
           <div class="icon-container-left">
             <svg
@@ -103,21 +104,70 @@
             </svg>
           </div>
         </div>
-        <div class="likes-container d-flex align-items-center">
+        <!-- likes -->
+        <div class="likes-container d-flex align-items-center mb-1">
           <img
             :src="post.likes[0].profile_picture"
             class="rounded-circle"
             alt="profile-image"
           />
           <span> Piace a </span>
-          <span class="my-text-bold">{{ post.likes[0].username }}</span>
+          <span class="my-text-bold my-text-underline-hover">{{
+            post.likes[0].username
+          }}</span>
           <span> e </span>
-          <span class="my-text-bold">altri 5</span>
+          <span class="my-text-bold">altri {{ post.likes.length - 1 }}</span>
         </div>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
+        <!-- commento proprietario del post -->
+        <div class="profile-comment-container mb-1">
+          <span class="my-text-bold my-text-underline-hover">{{
+            post.profile_name
+          }}</span>
+          <span> {{ post.post_text }}</span>
+        </div>
+        <!-- commenti -->
+        <div
+          class="mb-1 all-comment"
+          @click="(showMore = false), (isHidden = true)"
+        >
+          <span v-if="!isHidden"
+            >Mostra tutti e i {{ post.comments.length }} commenti</span
+          >
+        </div>
+        <div v-if="showMore">
+          <div
+            v-for="(comment, index) in post.comments.slice(0, 2)"
+            :key="index"
+          >
+            <span class="my-text-bold my-text-underline-hover">{{
+              comment.username
+            }}</span>
+            <span> {{ comment.text }}</span>
+          </div>
+        </div>
+        <div v-else>
+          <div v-for="(comment, index) in post.comments" :key="index">
+            <span class="my-text-bold my-text-underline-hover">{{
+              comment.username
+            }}</span>
+            <span> {{ comment.text }}</span>
+          </div>
+        </div>
+        <!-- <div class="comments-container mb-2">
+          <span class="my-text-bold my-text-underline-hover">{{
+            post.comments[0].username
+          }}</span>
+          <span> {{ post.comments[0].text }}</span>
+        </div>
+        <div class="comments-container mb-2">
+          <span class="my-text-bold my-text-underline-hover">{{
+            post.comments[1].username
+          }}</span>
+          <span> {{ post.comments[1].text }}</span>
+        </div> -->
+        <div class="date-container">
+          {{ post.date.date }}
+        </div>
       </div>
     </div>
   </div>
@@ -127,9 +177,26 @@
 export default {
   name: "Post",
   props: ["post"],
-  methods: {
-    /*     getLikePicture: function (obj) {
-      return obj[0].profile_picture;
+  data() {
+    return {
+      showMore: true,
+      isHidden: false,
+      //postDate: this.post.date.date,
+    };
+  },
+  created() {
+    //console.log(this.postDate);
+  },
+  computed: {
+    /*     getTimePost: function () {
+      let postDate = this.post.date.date;
+      console.log(postDate.getTime());
+      let nowDate = Date.now();
+      console.log(nowDate);
+
+      let diff = Math.abs(nowDate - postDate) / 3600000;
+      console.log(diff);
+      return diff;
     },
  */
   },
@@ -205,6 +272,10 @@ export default {
         & > span {
           margin-left: 5px;
         }
+      }
+      .all-comment {
+        cursor: pointer;
+        color: #8e8e8e;
       }
     }
   }

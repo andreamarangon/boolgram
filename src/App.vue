@@ -49,5 +49,9 @@ export default {
   .my-text-bold {
     font-weight: 600;
   }
+  .my-text-underline-hover:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
 </style>
