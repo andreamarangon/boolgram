@@ -6,7 +6,7 @@
           <MainLeft :profiles="profiles" :posts="posts" />
         </div>
         <div class="col-md-4">
-          <MainRight />
+          <MainRight :profiles="profiles" />
         </div>
       </div>
     </div>

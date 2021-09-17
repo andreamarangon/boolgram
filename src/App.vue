@@ -2,11 +2,6 @@
   <div id="app">
     <Navbar />
     <Main :profiles="profiles" :posts="posts" />
-    <!--     <h1 v-for="(item, index) in posts" :key="index">
-      {{ item.profile_name }}
-    </h1>
- -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
   </div>
 </template>
 
@@ -46,13 +41,27 @@ export default {
   color: rgba(var(--f75, 38, 38, 38), 1);
   margin-top: 60px;
   background-color: #fafafa;
+  font-size: 14px;
+  /* UTILITY */
   .my-text-bold {
     font-weight: 600;
     cursor: pointer;
   }
+  .my-bold {
+    font-weight: 600;
+  }
   .my-text-underline-hover:hover {
     text-decoration: underline;
     cursor: pointer;
+  }
+  .my-lightgray {
+    color: #8e8e8e;
+  }
+  .my-lightblue {
+    color: #0095f6;
+  }
+  .my-font-size-12 {
+    font-size: 12px;
   }
 }
 </style>

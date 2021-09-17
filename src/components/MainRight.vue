@@ -1,7 +1,7 @@
 <template>
   <div id="main-right">
     <Profile />
-    <Suggestions />
+    <Suggestions :profiles="profiles" />
     <Footer />
   </div>
 </template>
