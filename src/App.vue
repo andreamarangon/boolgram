@@ -48,6 +48,7 @@ export default {
   background-color: #fafafa;
   .my-text-bold {
     font-weight: 600;
+    cursor: pointer;
   }
   .my-text-underline-hover:hover {
     text-decoration: underline;

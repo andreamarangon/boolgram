@@ -119,22 +119,19 @@
           <span class="my-text-bold">altri {{ post.likes.length - 1 }}</span>
         </div>
         <!-- commento proprietario del post -->
-        <div class="profile-comment-container mb-1">
+        <div class="profile-comment-container">
           <span class="my-text-bold my-text-underline-hover">{{
             post.profile_name
           }}</span>
           <span> {{ post.post_text }}</span>
         </div>
         <!-- commenti -->
-        <div
-          class="mb-1 all-comment"
-          @click="(showMore = false), (isHidden = true)"
-        >
+        <div class="all-comment" @click="(showLess = false), (isHidden = true)">
           <span v-if="!isHidden && post.comments.length >= 3"
             >Mostra tutti e i {{ post.comments.length }} commenti</span
           >
         </div>
-        <div v-if="showMore">
+        <div v-if="showLess">
           <div
             v-for="(comment, index) in post.comments.slice(0, 2)"
             :key="index"
@@ -153,21 +150,36 @@
             <span> {{ comment.text }}</span>
           </div>
         </div>
-        <!-- <div class="comments-container mb-2">
-          <span class="my-text-bold my-text-underline-hover">{{
-            post.comments[0].username
-          }}</span>
-          <span> {{ post.comments[0].text }}</span>
-        </div>
-        <div class="comments-container mb-2">
-          <span class="my-text-bold my-text-underline-hover">{{
-            post.comments[1].username
-          }}</span>
-          <span> {{ post.comments[1].text }}</span>
-        </div> -->
         <div class="date-container">
           {{ post.date.date }}
         </div>
+      </div>
+      <!-- input messaggi -->
+      <div class="comment-input-container card-footer input-group">
+        <span class="input-group-text smile"
+          ><svg
+            aria-label="Emoji"
+            class="_8-yf5"
+            color="#262626"
+            fill="#262626"
+            height="24"
+            role="img"
+            viewBox="0 0 48 48"
+            width="24"
+          >
+            <path
+              d="M24 48C10.8 48 0 37.2 0 24S10.8 0 24 0s24 10.8 24 24-10.8 24-24 24zm0-45C12.4 3 3 12.4 3 24s9.4 21 21 21 21-9.4 21-21S35.6 3 24 3z"
+            ></path>
+            <path
+              d="M34.9 24c0-1.4-1.1-2.5-2.5-2.5s-2.5 1.1-2.5 2.5 1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5zm-21.8 0c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5zM24 37.3c-5.2 0-8-3.5-8.2-3.7-.5-.6-.4-1.6.2-2.1.6-.5 1.6-.4 2.1.2.1.1 2.1 2.5 5.8 2.5 3.7 0 5.8-2.5 5.8-2.5.5-.6 1.5-.7 2.1-.2.6.5.7 1.5.2 2.1 0 .2-2.8 3.7-8 3.7z"
+            ></path></svg
+        ></span>
+        <textarea
+          class="form-control"
+          placeholder="Aggiungi un commento..."
+          aria-label="Aggiungi un commento..."
+        ></textarea>
+        <span class="input-group-text publish">Pubblica</span>
       </div>
     </div>
   </div>
@@ -179,7 +191,7 @@ export default {
   props: ["post"],
   data() {
     return {
-      showMore: true,
+      showLess: true,
       isHidden: false,
       //postDate: this.post.date.date,
     };
@@ -276,6 +288,36 @@ export default {
       .all-comment {
         cursor: pointer;
         color: #8e8e8e;
+      }
+    }
+    .comment-input-container.card-footer.input-group {
+      background-color: #fff;
+      .input-group-text {
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+        &.smile {
+          padding-right: 5px;
+          cursor: pointer;
+        }
+        &.publish {
+          color: #0095f6;
+          opacity: 0.3;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+      textarea {
+        height: 18px;
+        border: 0;
+        resize: none;
+        &::placeholder {
+          font-size: 14px;
+          color: #8e8e8e;
+        }
+        &:focus {
+          box-shadow: none;
+        }
       }
     }
   }
