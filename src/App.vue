@@ -63,5 +63,8 @@ export default {
   .my-font-size-12 {
     font-size: 12px;
   }
+  .my-font-size-10 {
+    font-size: 10px;
+  }
 }
 </style>

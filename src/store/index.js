@@ -23,12 +23,12 @@ export default new Vuex.Store({
   },
   actions: {
     loadPosts({ commit }) {
-      console.log("load posts");
+      //console.log("load posts");
       return new Promise((resolve) => {
         axios
           .get("https://flynn.boolean.careers/exercises/api/boolgram/posts")
           .then((data) => {
-            console.log(data.data);
+            //console.log(data.data);
             let posts = data.data;
             commit("setPosts", posts);
           })
@@ -39,12 +39,12 @@ export default new Vuex.Store({
       });
     },
     loadProfiles({ commit }) {
-      console.log("load profile");
+      //console.log("load profile");
       return new Promise((resolve) => {
         axios
           .get("https://flynn.boolean.careers/exercises/api/boolgram/profiles")
           .then((data) => {
-            console.log(data.data);
+            //console.log(data.data);
             let profiles = data.data;
             commit("setProfiles", profiles);
           })
