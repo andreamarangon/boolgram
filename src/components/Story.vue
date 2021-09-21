@@ -21,7 +21,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .my-card {
-  width: 75px;
+  width: 80px;
   padding: 0 4px;
   .img-container {
     border-radius: 50%;
