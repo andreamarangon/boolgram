@@ -42,8 +42,8 @@ export default {
   }
   /* Track */
   &::-webkit-scrollbar-track {
-    //background: #f1f1f1;
-    box-shadow: inset 0 0 2px grey;
+    background: #f1f1f1;
+    //box-shadow: inset 0 0 2px grey;
     border-radius: 10px;
   }
 

@@ -117,7 +117,10 @@
             post.likes[0].username
           }}</span>
           <span> e </span>
-          <span class="my-text-bold">altri {{ post.likes.length - 1 }}</span>
+          <span v-if="isActive" class="my-text-bold"
+            >altri {{ post.likes.length - 1 }}</span
+          >
+          <span v-else class="my-text-bold">altri {{ post.likes.length }}</span>
         </div>
         <!-- commento proprietario del post -->
         <div class="profile-comment-container">
