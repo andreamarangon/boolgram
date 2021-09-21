@@ -178,11 +178,13 @@
             ></path></svg
         ></span>
         <textarea
+          v-model="comment"
+          @keyup.enter="send"
           class="form-control"
           placeholder="Aggiungi un commento..."
           aria-label="Aggiungi un commento..."
         ></textarea>
-        <span class="input-group-text publish">Pubblica</span>
+        <span @click="send" class="input-group-text publish">Pubblica</span>
       </div>
     </div>
   </div>
@@ -205,6 +207,7 @@ export default {
         "M43.5 48c-.4 0-.8-.2-1.1-.4L24 28.9 5.6 47.6c-.4.4-1.1.6-1.6.3-.6-.2-1-.8-1-1.4v-45C3 .7 3.7 0 4.5 0h39c.8 0 1.5.7 1.5 1.5v45c0 .6-.4 1.2-.9 1.4-.2.1-.4.1-.6.1z",
       isActive: true,
       isSave: false,
+      comment: "",
     };
   },
   created() {
@@ -223,6 +226,14 @@ export default {
     },
     toggleSave() {
       this.isSave = !this.isSave;
+    },
+    send: function () {
+      const comment = {
+        username: "sheriffwoody",
+        text: this.comment,
+      };
+      this.post.comments.push(comment);
+      this.comment = "";
     },
   },
 };
@@ -322,6 +333,7 @@ export default {
           opacity: 0.3;
           font-size: 14px;
           font-weight: 500;
+          cursor: pointer;
         }
       }
       textarea {
