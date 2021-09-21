@@ -347,6 +347,9 @@ export default {
         &:focus {
           box-shadow: none;
         }
+        &:not(:placeholder-shown) + .publish {
+          opacity: 1;
+        }
       }
     }
   }
