@@ -4,7 +4,7 @@
       <a class="navbar-brand" href="#"
         ><img src="../assets/logo.png" alt="boolgram-logo" width="95"
       /></a>
-      <form class="d-flex">
+      <form class="d-flex d-none d-md-block">
         <input
           class="form-control text-center bg-light"
           type="search"
@@ -13,7 +13,7 @@
         />
       </form>
 
-      <div class="" id="navbarNav">
+      <div id="navbarNav">
         <ul class="navbar-nav list-group list-group-horizontal">
           <li class="nav-item">
             <a class="nav-link" href="#"

@@ -20,4 +20,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+#main-right {
+  display: none;
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  #main-right {
+    display: block;
+  }
+}
 </style>
